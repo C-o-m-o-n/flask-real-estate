@@ -1,0 +1,94 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<section class="bg-primary">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">User</a></li>
+            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+
+<div class="container rounded bg-white mt-5 mb-5">
+    
+        
+        <div class="col-md-5 border-right">
+        
+			<form method="POST" action="{{ url_for('add_property') }}" enctype="multipart/form-data">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Add a property</h4>
+                </div>
+                
+                <div class="row mt-2">
+               
+                    
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12 mb-4">
+						<label class="labels">Property description</label>
+						<input name="content" type="text" class="form-control" placeholder="enter some descreption of the property" value="">
+					</div>
+                    <div class="col-md-12 mb-4">
+						<label class="labels">Bathreoom number1</label>
+						<input name="bath_no" type="text" class="form-control" placeholder="enter the number of Bathrooms" value="">
+					</div>
+                    <div class="col-md-12 mb-4">
+						<label class="labels">Bedroom number</label>
+						<input name="bed_no" type="text" class="form-control" placeholder="enter the number of Bedrooms " value="">
+					</div>
+                    <div class="col-md-12 mb-4">
+						<label class="labels">Price</label>
+						<input name="price" type="text" class="form-control" placeholder="enter price" value="">
+					</div>
+                    <div class="col-md-12 mb-4">
+						<label class="labels">County located</label>
+						<input name="county" type="text" class="form-control" placeholder="enter county" value="">
+					</div>
+                    <div class="col-md-12 mb-4">
+						<label class="labels">Area located</label>
+						<input name="area" type="text" class="form-control" placeholder="enter area" value="">
+					</div>
+					<div class="col-md-12 mb-4">
+						<label class="labels">Street located</label>
+						<input name="street" type="text" class="form-control" placeholder="enter street" value="">
+					</div>
+					<div class="row">
+                  <div class="col-sm-3">
+                    <label class="mb-0">Picture</label>
+                   <div class="col-sm-9">
+                      <div class="form-group">
+                        <input name="post_img" type="file">
+                      </div>
+                 </div>
+                </div>
+                
+                <div class="mt-5 text-center">
+					<input type="submit" class="btn btn-primary profile-button" value="Save Profile">
+
+				</div>
+            </div>
+            </form>
+            
+        </div>
+        
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+</section>
+{% endblock content %}

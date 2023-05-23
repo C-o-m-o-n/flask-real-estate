@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Triollec</title>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico')}}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        
+            <!-- Custom fonts for this template-->
+    <link href="static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+        <link rel="stylesheet" href="static/css/tiny-slider.css" />
+    <link rel="stylesheet" href="static/css/aos.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
+
+    </head>
+    <body>
+    <nav class="site-nav">
+		
+		<div >
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    
+      {% for category, message in messages %}
+      {% if category == 'error'%}
+      <div class="alert alert-danger alert-dismissable fade show" role="alert">
+              {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+        {% elif category == 'info' %}
+        <div class="alert alert-info alert-dismissable fade show" role="alert">
+              {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+          {% else %}
+          <div class="alert alert-success alert-dismissable fade show" role="alert">
+              {{ message }}
+            <button type="button" class="close " data-dismiss="alert" aria-label="close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+          {% endif %}
+          {% endfor %}
+        
+        {% endif %}
+        {% endwith %}
+      </div>
+      
+      <div class="container">
+        <div class="menu-bg-wrap">
+          <div class="site-navigation">
+            <a href="index.html" class="logo m-0 float-start">Property</a>
+
+            <ul
+              class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
+            >
+                        
+                        
+              <li class="active"><a href="index.html">Home</a></li>
+                <li class="has-children">
+                <a href="properties.html">Properties</a>
+                <ul class="dropdown">
+                  <li><a href="#">Buy Property</a></li>
+                  <li><a href="#">Sell Property</a></li>
+                  <li class="has-children">
+                    <a href="#">Dropdown</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Sub Menu One</a></li>
+                      <li><a href="#">Sub Menu Two</a></li>
+                      <li><a href="#">Sub Menu Three</a></li>
+                    </ul>
+                    
+                  </li>
+                </ul>
+              </li>
+              
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              {% if current_user.is_authenticated %}
+              <li><a  href="{{url_for('add_property')}}">Add Property</a></li>
+			  <li><a  href="{{url_for('user')}}">Profile</a></li>
+              <li><a  href="{{url_for('logout')}}">Logout</a></li>
+                        {% else %}
+              <li><a href="contact.html">Contact Us</a></li>
+               <li><a  href="{{url_for('login')}}">Login</a></li>
+               <li><a href="{{url_for('signup')}}">Register</a></li>
+                        {% endif %}
+                        
+              
+            </ul>
+            
+      
+                        
+           
+                 
+                
+                
+            <a
+              href="#"
+              class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
+              data-toggle="collapse"
+              data-target="#main-navbar"
+            >
+              <span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    </body>
+</html>
+
+
+
+<!--
+               <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Login Screens:</h6>
+                        <a class="collapse-item" href="{{url_for('index')}}">Home</a>
+                        {% if current_user.is_authenticated %}
+                        <a class="collapse-item" href="{{url_for('user')}}">Profile</a>
+                        <a class="collapse-item" href="{{url_for('logout')}}">Logout</a>
+                        {% else %}
+                        <a class="collapse-item" href="{{url_for('login')}}">Login</a>
+                        <a class="collapse-item" href="{{url_for('signup')}}">Register</a>
+                        {% endif %}
+                        <a class="collapse-item" href="{{url_for('add')}}">Add Post</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Other Pages:</h6>
+                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <a class="collapse-item" href="404.html">404 Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                    </div>
+                </div>
+         
+
+
+                   
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <img class="img-profile rounded-circle"
+                                    src="{{ url_for('static', filename='assets/img/undraw_profile.svg') }}">
+                            </a>
+              
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="{{ url_for('user') }}">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                    
+                                    -->
+                                    
