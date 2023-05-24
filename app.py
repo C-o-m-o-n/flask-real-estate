@@ -65,6 +65,7 @@ class BlogPost(db.Model,UserMixin):
   bath_no = db.Column(db.String(256))
   county = db.Column(db.String(256))
   street = db.Column(db.String(256))
+  area = db.Column(db.String(256))
   date_posted = db.Column(db.DateTime)
   #foreign key to link to other tables
   poster_id = db.Column(db.Integer, db.ForeignKey('users.id'))
@@ -95,19 +96,19 @@ class Users(db.Model,UserMixin):
 # define comments table
 class Comments(db.Model, UserMixin):
   id = db.Column(db.Integer, primary_key=True)
-  username = db.Column(db.Integer, db.ForeignKey('users.id'))#represents the user
+  username = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='cascade'))#represents the user
   content = db.Column(db.String(100))
   date_posted = db.Column(db.DateTime)
-  post_id = db.Column(db.Integer, db.ForeignKey('blog_post.id'))
+  post_id = db.Column(db.Integer, db.ForeignKey('blog_post.id', ondelete='cascade'))
 
 
 #define the Likes table
 class Likes(db.Model,UserMixin):
   id = db.Column(db.Integer, primary_key=True)
-  username = db.Column(db.Integer, db.ForeignKey('users.id'))#represents the user
+  username = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='cascade'))#represents the user
   date_posted = db.Column(db.DateTime)
   #user can have many ppsts
-  post_id = db.Column(db.Integer, db.ForeignKey('blog_post.id'))
+  post_id = db.Column(db.Integer, db.ForeignKey('blog_post.id', ondelete='cascade'))
 
 
 #main app code starts here****************((*))
@@ -119,6 +120,12 @@ with app.app_context():
   def index():
     posts = BlogPost.query.all()
     return render_template("index.html", posts=posts, current_user=current_user )
+  
+  #the properties page
+  @app.route('/propertise')
+  def properties():
+    posts = BlogPost.query.all()
+    return render_template("properties.html", posts=posts, current_user=current_user )
     
   #like page
   @app.route('/like/<int:post_id>', methods=['POST'])
@@ -163,7 +170,7 @@ with app.app_context():
         
     comments = Comments.query.filter_by(post_id=post_id)
     likes = Likes.query.filter_by(post_id=post_id)
-    return render_template("post.html", post=post, date_posted=date_posted, post_id=post_id, comments=comments, likes=likes)
+    return render_template("property-single.html", post=post, date_posted=date_posted, post_id=post_id, comments=comments, likes=likes)
   
   #the page for adding posts 8 the frontend  
   @app.route('/add')

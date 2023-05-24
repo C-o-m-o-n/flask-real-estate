@@ -17,13 +17,13 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-        <link rel="stylesheet" href="static/css/tiny-slider.css" />
-    <link rel="stylesheet" href="static/css/aos.css" />
-    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/tiny-slider.css" />
+    <link rel="stylesheet" href="../static/css/aos.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
 
     </head>
     <body>
-    <nav class="site-nav">
+    <nav class="site-nav" >
 		
 		<div >
 {% with messages = get_flashed_messages(with_categories=true) %}
@@ -61,14 +61,12 @@
       <div class="container">
         <div class="menu-bg-wrap">
           <div class="site-navigation">
-            <a href="index.html" class="logo m-0 float-start">Property</a>
+            <a href="{{url_for('index')}}" class="logo m-0 float-start">Property</a>
 
             <ul
               class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
             >
-                        
-                        
-              <li class="active"><a href="index.html">Home</a></li>
+              <li class="active"><a href="{{url_for('index')}}">Home</a></li>
                 <li class="has-children">
                 <a href="properties.html">Properties</a>
                 <ul class="dropdown">
@@ -100,12 +98,7 @@
                         
               
             </ul>
-            
-      
-                        
-           
-                 
-                
+  
                 
             <a
               href="#"
@@ -123,57 +116,4 @@
 </html>
 
 
-
-<!--
-               <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="{{url_for('index')}}">Home</a>
-                        {% if current_user.is_authenticated %}
-                        <a class="collapse-item" href="{{url_for('user')}}">Profile</a>
-                        <a class="collapse-item" href="{{url_for('logout')}}">Logout</a>
-                        {% else %}
-                        <a class="collapse-item" href="{{url_for('login')}}">Login</a>
-                        <a class="collapse-item" href="{{url_for('signup')}}">Register</a>
-                        {% endif %}
-                        <a class="collapse-item" href="{{url_for('add')}}">Add Post</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-         
-
-
-                   
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="{{ url_for('static', filename='assets/img/undraw_profile.svg') }}">
-                            </a>
-              
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ url_for('user') }}">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                    
-                                    -->
                                     

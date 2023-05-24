@@ -71,7 +71,7 @@
           <div class="col-lg-6 text-lg-end">
             <p>
               <a
-                href="#"
+                href="{{ url_for('properties') }}"
                 target="_blank"
                 class="btn btn-primary text-white py-3 px-4"
                 >View all properties</a
@@ -95,18 +95,16 @@
                 {% for post in posts %}
                 <div class="property-item">
 					
-                  <a href="property-single.html" class="img">
-                    <img src="{{ url_for('static', filename='assets/post_img/' + post.post_img) }}" alt="Image" class="img-fluid" />
+					{% if post.post_img %}
+                  <a href="{{url_for('post', post_id=post.id)}}" class="img">
+                    <img src="{{url_for('static', filename='assets/post_img/' + post.post_img ) }}" style="width:100%; height:400px;" alt="Image" class="img-fluid" />
                   </a>
+                   {% endif %}
 
                   <div class="property-content">
-                    <div class="price mb-2">
-						<span>${{ post.price }}
-						</span>
-					</div>
+                    <div class="price mb-2"><span>${{ post.price }}</span></div>
                     <div>
-                      <span class="d-block mb-2 text-black-50"
-                        > {{ post.county }} {{ post.area }}, {{ post.street }}.</span
+                     <span class="d-block mb-2 text-black-50"> {{ post.county }} {{ post.area }}, {{ post.street }}.</span
                       >
                       <span class="city d-block mb-3">{{ post.area }}, {{ post.county }}</span>
 
@@ -123,7 +121,7 @@
 
 
                       <a
-                        href="property-single.html"
+                        href="{{url_for('post', post_id=post.id)}}"
                         class="btn btn-primary py-2 px-3"
                         >See details</a
                       >
@@ -132,6 +130,7 @@
                   
                 </div>
                 {% endfor %}
+                <!-- an item-->
               </div>
 
               <div

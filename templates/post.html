@@ -248,7 +248,9 @@
     <div class="text-left">
     <div class="post">
       {% if post.post_img %} <!-- post image -->
-      <img class="img-fluid px-0 px-sm-1 mt-1 mb-4" style="border-radius:10px; margin:0; display: block; width: 100%;" src="{{ url_for('static',filename='assets/post_img/' + post.post_img) }}">
+      <img class="img-fluid px-0 px-sm-1 mt-1 mb-4"
+       style="border-radius:10px; margin:0; display: block; width: 100%;" 
+       src="{{ url_for('static',filename='assets/post_img/' + post.post_img) }}">
 
       {% endif %}
       <div class="post-content">
