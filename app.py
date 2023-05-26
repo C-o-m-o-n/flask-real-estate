@@ -59,11 +59,14 @@ class BlogPost(db.Model,UserMixin):
   id = db.Column(db.Integer, primary_key=True)
   date_posted = db.Column(db.DateTime)
   content = db.Column(db.String(256))
-  post_img = db.Column(db.String(100))
+  post_img_1 = db.Column(db.String(100))
+  post_img_2 = db.Column(db.String(100))
+  post_img_3 = db.Column(db.String(100))
   price = db.Column(db.String(256))
   bed_no = db.Column(db.String(256))
   bath_no = db.Column(db.String(256))
   county = db.Column(db.String(256))
+  purpose = db.Column(db.String(256))
   street = db.Column(db.String(256))
   area = db.Column(db.String(256))
   date_posted = db.Column(db.DateTime)
@@ -191,17 +194,21 @@ with app.app_context():
   @app.route('/addpost', methods=['GET', 'POST'])
   def add_property():
       if request.method == "POST":
-          content_img = request.files['post_img']
+          content_img = request.files['post_img_1']
           content = request.form['content']
           county = request.form['county']
           street = request.form['street']
           price = request.form['price']
           bath_no = request.form['bath_no']
           bed_no = request.form['bed_no']
+          area = request.form["area"]
+          purpose = request.form["purpose"]
           poster = current_user.id
           if content_img:
-              post_img = save_post_img(request.files['post_img'])
-              post = BlogPost(post_img=post_img, poster_id=poster, content=content, date_posted=datetime.now(), price=price, street=street, county=county, bath_no=bath_no, bed_no=bed_no )
+              post_img_1 = save_post_img(request.files['post_img_1'])
+              post_img_2 = save_post_img(request.files['post_img_2'])
+              post_img_3 = save_post_img(request.files['post_img_3'])
+              post = BlogPost(post_img_1=post_img_1, post_img_2=post_img_2, post_img_3=post_img_3, purpose=purpose, poster_id=poster, content=content, area=area, date_posted=datetime.now(), price=price, street=street, county=county, bath_no=bath_no, bed_no=bed_no )
               db.create_all()
               db.session.add(post)
               db.session.commit()

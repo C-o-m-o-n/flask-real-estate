@@ -95,9 +95,9 @@
                 {% for post in posts %}
                 <div class="property-item">
 					
-					{% if post.post_img %}
+					{% if post.post_img_2 %}
                   <a href="{{url_for('post', post_id=post.id)}}" class="img">
-                    <img src="{{url_for('static', filename='assets/post_img/' + post.post_img ) }}" style="width:100%; height:400px;" alt="Image" class="img-fluid" />
+                    <img src="{{url_for('static', filename='assets/post_img/' + post.post_img_2 ) }}" style="width:100%; height:400px;" alt="Image" class="img-fluid" />
                   </a>
                    {% endif %}
 
