@@ -121,8 +121,16 @@ with app.app_context():
   #the homepage
   @app.route('/')
   def index():
-    posts = BlogPost.query.all()
-    return render_template("index.html", posts=posts, current_user=current_user )
+	  posts = []
+	  all_posts = BlogPost.query.all()
+	  for i in all_posts:
+		  posts.append(i)
+		  posts_length  = len(all_posts)
+		  last_four = posts_length-1
+		  posts = posts[-last_four:]
+	  print("posts price: ", [post.county for post in posts])
+	  print(posts_length)
+	  return render_template("index.html", posts=posts, current_user=current_user )
   
   #the properties page
   @app.route('/propertise')
