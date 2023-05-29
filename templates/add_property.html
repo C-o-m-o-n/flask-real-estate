@@ -2,21 +2,11 @@
 
 {% block content %}
 <section class="bg-primary">
+	{% include 'navbar.html' %}
   <div class="container py-5">
-    <div class="row">
-      <div class="col">
-        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">User</a></li>
-            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-          </ol>
-        </nav>
-      </div>
-    </div>
 
-
-<div class="container rounded bg-white mt-5 mb-5">
+ 
+<div class=" rounded bg-white mt-5 mb-5">
     
         
         <div class="col-md-5 border-right">
@@ -101,7 +91,6 @@
                 
                 <div class="mt-5 text-center">
 					<input type="submit" class="btn btn-primary profile-button" value="Save Property">
-					<input type="submit" class="btn btn-primary profile-button" value="Save Property">
 
 				</div>
             </div>
@@ -113,12 +102,6 @@
 </div>
 </div>
 </div>
-
-
-
-
-
-
 
 </section>
 {% endblock content %}

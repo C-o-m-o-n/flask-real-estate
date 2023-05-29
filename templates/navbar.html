@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Triollec</title>
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico')}}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         
@@ -24,8 +18,9 @@
     </head>
     <body>
     <nav class="site-nav" >
-		
-		<div >
+
+      <div class="container">
+		  		<div >
 {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
     
@@ -33,7 +28,7 @@
       {% if category == 'error'%}
       <div class="alert alert-danger alert-dismissable fade show" role="alert">
               {{ message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <button type="button" class="btn close" data-dismiss="alert" aria-label="close">
               <span aria-hidden="true">x</span>
             </button>
           </div>
@@ -57,22 +52,19 @@
         {% endif %}
         {% endwith %}
       </div>
-      
-      <div class="container">
         <div class="menu-bg-wrap">
           <div class="site-navigation">
-            <a href="{{url_for('index')}}" class="logo m-0 float-start">Property</a>
+            <a href="{{url_for('index')}}" class="logo m-0 float-start">RealEstate</a>
 
             <ul
-              class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end"
-            >
+              class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
               <li class="active"><a href="{{url_for('index')}}">Home</a></li>
                 <li class="has-children">
-                <a href="properties.html">Properties</a>
+                <a href="{{url_for('properties')}}">Properties</a>
                 <ul class="dropdown">
-                  <li><a href="#">Buy Property</a></li>
-                  <li><a href="#">Sell Property</a></li>
-                  <li class="has-children">
+                  <li><a href="{{url_for('for_rent')}}">Properties for rent</a></li>
+                  <li><a href="{{url_for('for_sale')}}">Properties for sell</a></li>
+                 <!-- <li class="has-children">
                     <a href="#">Dropdown</a>
                     <ul class="dropdown">
                       <li><a href="#">Sub Menu One</a></li>
@@ -80,12 +72,10 @@
                       <li><a href="#">Sub Menu Three</a></li>
                     </ul>
                     
-                  </li>
+                  </li> -->
                 </ul>
               </li>
-              
-              <li><a href="services.html">Services</a></li>
-              <li><a href="about.html">About</a></li>
+
               {% if current_user.is_authenticated %}
               <li><a  href="{{url_for('add_property')}}">Add Property</a></li>
 			  <li><a  href="{{url_for('user')}}">Profile</a></li>
@@ -95,11 +85,9 @@
                <li><a  href="{{url_for('login')}}">Login</a></li>
                <li><a href="{{url_for('signup')}}">Register</a></li>
                         {% endif %}
-                        
-              
+
             </ul>
-  
-                
+
             <a
               href="#"
               class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"

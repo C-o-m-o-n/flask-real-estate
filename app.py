@@ -40,19 +40,11 @@ metadata = MetaData(naming_convention=convention)
 db = SQLAlchemy(app, metadata=metadata)
 migrate = Migrate(app,db,render_as_batch=True)
 
-
-
 login_manager = LoginManager()
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 login_manager.init_app(app)
 #default Column id
-
-id_list =[]
-for i in range(1000000):
-  id_list.append(i)
-  uid = random.choice(id_list)
-  
 
 #define the BlogPost table
 class BlogPost(db.Model,UserMixin):
@@ -121,22 +113,35 @@ with app.app_context():
   #the homepage
   @app.route('/')
   def index():
-	  posts = []
-	  all_posts = BlogPost.query.all()
-	  for i in all_posts:
-		  posts.append(i)
-		  posts_length  = len(all_posts)
-		  last_four = posts_length-1
-		  posts = posts[-last_four:]
-	  print("posts price: ", [post.county for post in posts])
-	  print(posts_length)
-	  return render_template("index.html", posts=posts, current_user=current_user )
-  
+      posts = BlogPost.query.all()
+      users = Users.query.all()
+      return render_template("index.html", posts=posts[-3:],users=users[-3:], current_user=current_user )
+ 
+  #the property for sale page
+  @app.route('/for_sale')
+  def for_sale():
+	  posts = BlogPost.query.filter_by(purpose="for sale").all()
+
+	  return render_template("properties_for_sale.html", posts=posts, current_user=current_user )
+ 
+  #the property for rent page
+  @app.route('/for_rent')
+  def for_rent():
+	  posts = BlogPost.query.filter_by(purpose="for rent").all()
+
+	  return render_template("properties_for_rent.html", posts=posts, current_user=current_user )
+
   #the properties page
-  @app.route('/propertise')
+  @app.route('/properties')
   def properties():
     posts = BlogPost.query.all()
     return render_template("properties.html", posts=posts, current_user=current_user )
+  
+  #the checkout page
+  @app.route('/checkout')
+  def checkout():
+    posts = BlogPost.query.all()
+    return render_template("checkout.html", posts=posts[-3:], current_user=current_user )
     
   #like page
   @app.route('/like/<int:post_id>', methods=['POST'])
@@ -288,8 +293,6 @@ with app.app_context():
       postcode = request.form['postcode']
       county = request.form['county']
       area = request.form['area']
-      
-
 
       current_user.surname = surname
       current_user.first_name = first_name

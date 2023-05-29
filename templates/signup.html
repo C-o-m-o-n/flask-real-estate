@@ -1,7 +1,5 @@
 {% extends 'base.html'%}
 
-<body>
-  <!-- Main Content-->
   {% block content%}
   <body class="bg-gradient-primary">
 
@@ -54,35 +52,35 @@
 
                 <form class="user" action="{{ url_for('signup')}}" method="POST" enctype="multipart/form-data">
                   <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-3">
+                    <div class="col-sm-6 mb-3">
                       <input name="first_name" type="text" class="form-control form-control-user" id="exampleFirstName"
                       placeholder="First Name">
                     </div>
-                    <div class="col-sm-6 mb-sm-3">
+                    <div class="col-sm-6 mb-3">
                       <input name="surname" type="text" class="form-control form-control-user" id="exampleLastName"
                       placeholder="Surname">
                     </div>
                   </div>
-                  <div class="form-group mb-sm-3">
+                  <div class="form-group mb-3">
                     <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail"
                     placeholder="Email Address">
                   </div>
                   <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-3">
+                    <div class="col-sm-6 mb-3 ">
                       <input name="password1" type="password" class="form-control form-control-user"
                       id="exampleInputPassword" placeholder="Password">
                     </div>
-                    <div class="col-sm-6 mb-sm-3">
+                    <div class="col-sm-6 mb-3">
                       <input name="password2" type="password" class="form-control form-control-user"
                       id="exampleRepeatPassword" placeholder="Repeat Password">
                     </div>
                   </div>
                   <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account">
                   <hr>
-                  <a href="index.html" class="btn btn-google btn-user btn-block">
+                  <a href="index.html" class="btn btn-danger p-3 mb-3">
                     <i class="fab fa-google fa-fw"></i> Register with Google
                   </a>
-                  <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                  <a href="index.html" class="btn btn-primary  p-3 mb-3">
                     <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                   </a>
                 </form>
@@ -102,13 +100,10 @@
     </div>
 
 
+  </body>
     {% endblock content%}
 
     <!-- Footer-->
-    {% block footer %}
-
-    {% endblock footer%}
-
-  </body>
-
-</html>
+   {% block footer%}
+           {% include 'footer.html'%}
+  {% endblock footer%}  

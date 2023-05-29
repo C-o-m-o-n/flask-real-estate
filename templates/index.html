@@ -40,7 +40,7 @@
             <h1 class="heading" data-aos="fade-up">
               Easiest way to find your dream home
             </h1>
-            <form
+           <!-- <form
               action="#"
               class="narrow-w form-search d-flex align-items-stretch mb-3"
               data-aos="fade-up"
@@ -52,7 +52,8 @@
                 placeholder="Your ZIP code or City. e.g. New York"
               />
               <button type="submit" class="btn btn-primary">Search</button>
-            </form>
+            </form> -->
+            <h3 class="heading" data-aos="fade-up">Welcome to the RIAT Real estate community</h3>
           </div>
         </div>
       </div>
@@ -79,10 +80,7 @@
             </p>
           </div>
         </div>
-        
-        
-        
-      
+ 
 		
 		<div class="row">
           <div class="col-12">
@@ -91,13 +89,13 @@
               <div class="property-slider">
 
        
-                <!-- .item -->
+                  <!-- .item -->
                 {% for post in posts %}
                 <div class="property-item">
 					
-					{% if post.post_img_2 %}
+					{% if post.post_img_1 %}
                   <a href="{{url_for('post', post_id=post.id)}}" class="img">
-                    <img src="{{url_for('static', filename='assets/post_img/' + post.post_img_2 ) }}" style="width:100%; height:400px;" alt="Image" class="img-fluid" />
+                    <img src="{{url_for('static', filename='assets/post_img/' + post.post_img_1 ) }}" style="width:100%; height:400px;" alt="Image" class="img-fluid" />
                   </a>
                    {% endif %}
 
@@ -130,7 +128,7 @@
                   
                 </div>
                 {% endfor %}
-                <!-- an item-->
+              
               </div>
 
               <div
@@ -159,14 +157,13 @@
         </div>
       </div>
     </div>
-
     <section class="features-1">
       <div class="container">
         <div class="row">
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
             <div class="box-feature">
               <span class="flaticon-house"></span>
-              <h3 class="mb-3">Our Properties</h3>
+              <h3 class="mb-3">New Properties</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Voluptates, accusamus.
@@ -177,7 +174,7 @@
           <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
             <div class="box-feature">
               <span class="flaticon-building"></span>
-              <h3 class="mb-3">Property for Sale</h3>
+              <h3 class="mb-3">Property for Rent</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Voluptates, accusamus.
@@ -364,16 +361,16 @@
               <img src="static/assets/images/hero_bg_3.jpg" alt="Image" class="img-fluid" />
             </div>
           </div>
-          <div class="col-lg-4">
+ 
+      <div class="col-lg-4">
             <div class="d-flex feature-h">
               <span class="wrap-icon me-3">
                 <span class="icon-home2"></span>
               </span>
               <div class="feature-text">
-                <h3 class="heading">2M Properties</h3>
+                <h3 class="heading">2000 + Properties</h3>
                 <p class="text-black-50">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Nostrum iste.
+                  Choose the best Property that sutisfy your needs from over 200 Properties in our collection.
                 </p>
               </div>
             </div>
@@ -384,9 +381,7 @@
               </span>
               <div class="feature-text">
                 <h3 class="heading">Top Rated Agents</h3>
-                <p class="text-black-50">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Nostrum iste.
+                <p class="text-black-50">Our agents are the most top rated in the industry over the country
                 </p>
               </div>
             </div>
@@ -398,59 +393,52 @@
               <div class="feature-text">
                 <h3 class="heading">Legit Properties</h3>
                 <p class="text-black-50">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Nostrum iste.
+                  Our Properties are have been
+                  approved and are of great quality from the best agents in the region
                 </p>
               </div>
             </div>
           </div>
+
         </div>
         <div class="row section-counter mt-5">
           <div
             class="col-6 col-sm-6 col-md-6 col-lg-3"
             data-aos="fade-up"
-            data-aos-delay="300"
-          >
+            data-aos-delay="300">
             <div class="counter-wrap mb-5 mb-lg-0">
               <span class="number"
-                ><span class="countup text-primary">3298</span></span
-              >
+                ><span class="countup text-primary">3298</span></span>
               <span class="caption text-black-50"># of Buy Properties</span>
             </div>
           </div>
           <div
             class="col-6 col-sm-6 col-md-6 col-lg-3"
             data-aos="fade-up"
-            data-aos-delay="400"
-          >
+            data-aos-delay="400">
             <div class="counter-wrap mb-5 mb-lg-0">
               <span class="number"
-                ><span class="countup text-primary">2181</span></span
-              >
+                ><span class="countup text-primary">2181</span></span>
               <span class="caption text-black-50"># of Sell Properties</span>
             </div>
           </div>
           <div
             class="col-6 col-sm-6 col-md-6 col-lg-3"
             data-aos="fade-up"
-            data-aos-delay="500"
-          >
+            data-aos-delay="500">
             <div class="counter-wrap mb-5 mb-lg-0">
               <span class="number"
-                ><span class="countup text-primary">9316</span></span
-              >
+                ><span class="countup text-primary">9316</span></span>
               <span class="caption text-black-50"># of All Properties</span>
             </div>
           </div>
           <div
             class="col-6 col-sm-6 col-md-6 col-lg-3"
             data-aos="fade-up"
-            data-aos-delay="600"
-          >
+            data-aos-delay="600">
             <div class="counter-wrap mb-5 mb-lg-0">
               <span class="number"
-                ><span class="countup text-primary">7191</span></span
-              >
+                ><span class="countup text-primary">7191</span></span>
               <span class="caption text-black-50"># of Agents</span>
             </div>
           </div>
@@ -461,14 +449,12 @@
     <div class="section">
       <div class="row justify-content-center footer-cta" data-aos="fade-up">
         <div class="col-lg-7 mx-auto text-center">
-          <h2 class="mb-4">Be a part of our growing real state agents</h2>
+          <h2 class="mb-4">Be a part of our growing real state community</h2>
           <p>
             <a
-              href="#"
+              href="{{url_for('signup')}}"
               target="_blank"
-              class="btn btn-primary text-white py-3 px-4"
-              >Apply for Real Estate agent</a
-            >
+              class="btn btn-primary text-white py-3 px-4"> Join our Real Estate Community</a>
           </p>
         </div>
         <!-- /.col-lg-7 -->
@@ -481,7 +467,7 @@
         <div class="row justify-content-center text-center mb-5">
           <div class="col-lg-6 mb-5">
             <h2 class="font-weight-bold heading text-primary mb-4">
-              Our Agents
+              Our New Agents
             </h2>
             <p class="text-black-50">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
@@ -491,16 +477,15 @@
           </div>
         </div>
         <div class="row">
+			{% for user in users %}
           <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
             <div class="h-100 person">
-              <img
-                src="static/assets/images/person_1-min.jpg"
-                alt="Image"
-                class="img-fluid"
-              />
-
+				{% if user.profile_pic %}
+                    <img src="{{url_for('static', filename='assets/profile_img/' + user.profile_pic ) }}" alt="Image" class="img-fluid" />
+                   {% endif %}
+                   
               <div class="person-contents">
-                <h2 class="mb-0"><a href="#">James Doe</a></h2>
+                <h2 class="mb-0"><a href="#">{{ user.first_name}} {{ user.surname}}</a></h2>
                 <span class="meta d-block mb-3">Real Estate Agent</span>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -525,183 +510,14 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
-            <div class="h-100 person">
-              <img
-                src="static/assets/images/person_2-min.jpg"
-                alt="Image"
-                class="img-fluid"
-              />
-
-              <div class="person-contents">
-                <h2 class="mb-0"><a href="#">Jean Smith</a></h2>
-                <span class="meta d-block mb-3">Real Estate Agent</span>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facere officiis inventore cumque tenetur laboriosam, minus
-                  culpa doloremque odio, neque molestias?
-                </p>
-
-                <ul class="social list-unstyled list-inline dark-hover">
-                  <li class="list-inline-item">
-                    <a href="#"><span class="icon-twitter"></span></a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#"><span class="icon-facebook"></span></a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#"><span class="icon-linkedin"></span></a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#"><span class="icon-instagram"></span></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
-            <div class="h-100 person">
-              <img
-                src="static/assets/images/person_3-min.jpg"
-                alt="Image"
-                class="img-fluid"
-              />
-
-              <div class="person-contents">
-                <h2 class="mb-0"><a href="#">Alicia Huston</a></h2>
-                <span class="meta d-block mb-3">Real Estate Agent</span>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facere officiis inventore cumque tenetur laboriosam, minus
-                  culpa doloremque odio, neque molestias?
-                </p>
-
-                <ul class="social list-unstyled list-inline dark-hover">
-                  <li class="list-inline-item">
-                    <a href="#"><span class="icon-twitter"></span></a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#"><span class="icon-facebook"></span></a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#"><span class="icon-linkedin"></span></a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#"><span class="icon-instagram"></span></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          
+          {% endfor%}
+          
         </div>
       </div>
     </div>
 
-    <div class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="widget">
-              <h3>Contact</h3>
-              <address>43 Raymouth Rd. Baltemoer, London 3910</address>
-              <ul class="list-unstyled links">
-                <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-                <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-                <li>
-                  <a href="mailto:info@mydomain.com">info@mydomain.com</a>
-                </li>
-              </ul>
-            </div>
-            <!-- /.widget -->
-          </div>
-          <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <div class="widget">
-              <h3>Sources</h3>
-              <ul class="list-unstyled float-start links">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Vision</a></li>
-                <li><a href="#">Mission</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Privacy</a></li>
-              </ul>
-              <ul class="list-unstyled float-start links">
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Creative</a></li>
-              </ul>
-            </div>
-            <!-- /.widget -->
-          </div>
-          <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <div class="widget">
-              <h3>Links</h3>
-              <ul class="list-unstyled links">
-                <li><a href="#">Our Vision</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
-              </ul>
-
-              <ul class="list-unstyled social">
-                <li>
-                  <a href="#"><span class="icon-instagram"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="icon-twitter"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="icon-facebook"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="icon-linkedin"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="icon-pinterest"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="icon-dribbble"></span></a>
-                </li>
-              </ul>
-            </div>
-            <!-- /.widget -->
-          </div>
-          <!-- /.col-lg-4 -->
-        </div>
-        <!-- /.row -->
-
-        <div class="row mt-5">
-          <div class="col-12 text-center">
-            <!-- 
-              **==========
-              NOTE: 
-              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
-              **==========
-            -->
-
-            <p>
-              Copyright &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              . All Rights Reserved. &mdash; Designed with love by
-              <a href="https://untree.co">Untree.co</a>
-              <!-- License information: https://untree.co/license/ -->
-            </p>
-            <div>
-              Distributed by
-              <a href="https://themewagon.com/" target="_blank">themewagon</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.container -->
-    </div>
-    <!-- /.site-footer -->
+   {% include 'footer.html'%}
 
     <!-- Preloader -->
     <div id="overlayer"></div>
@@ -725,7 +541,7 @@
         </body>
         {% endblock content %}
 
-      </html>
+    
       
       
       
