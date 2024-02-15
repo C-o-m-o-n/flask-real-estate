@@ -120,16 +120,14 @@ with app.app_context():
   #the property for sale page
   @app.route('/for_sale')
   def for_sale():
-	  posts = BlogPost.query.filter_by(purpose="for sale").all()
-
-	  return render_template("properties_for_sale.html", posts=posts, current_user=current_user )
+    posts = BlogPost.query.filter_by(purpose="for sale").all()
+    return render_template("properties_for_sale.html", posts=posts, current_user=current_user )
  
   #the property for rent page
   @app.route('/for_rent')
   def for_rent():
-	  posts = BlogPost.query.filter_by(purpose="for rent").all()
-
-	  return render_template("properties_for_rent.html", posts=posts, current_user=current_user )
+    posts = BlogPost.query.filter_by(purpose="for rent").all()
+    return render_template("properties_for_rent.html", posts=posts, current_user=current_user )
 
   #the properties page
   @app.route('/properties')
